@@ -1,11 +1,11 @@
 import './App.css'
-import TeamList from './components/TeamList'
+import Match from './components/Match'
 
 function App() {
   return (
-    <div className="">
+    <div className="bg-zinc-900">
       <h1>APP</h1>
-      <TeamList />
+      <Match />
     </div>
   )
 }
