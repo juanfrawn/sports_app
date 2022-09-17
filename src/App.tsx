@@ -1,11 +1,17 @@
 import './App.css'
-import TeamList from './components/TeamList'
+import { Routes, Route } from "react-router-dom";
+import SportPicker from './components/SportPicker'
+import MLB from './components/MLB'
+import NFL from './components/NFL'
 
 function App() {
   return (
-    <div className="bg-zinc-900 ">
-      <h1 className='py-5 text-center text-zinc-200 font-poppins'></h1>
-      <TeamList />
+      <div className="bg-zinc-900 ">
+      <Routes>
+        <Route path="/" element={<SportPicker />} />
+        <Route path="/mlb" element={<MLB />} />
+        <Route path="/nfl" element={<NFL />} />
+      </Routes>
     </div>
   )
 }

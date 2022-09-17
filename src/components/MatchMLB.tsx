@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
-import { teams, forecast } from '../utils/constants'
+import { MLB_TEAMS, forecast } from '../utils/constants'
 
 import baseball from '../img/baseball_26be.png'
 import flame from '../img/fire_1f525.png'
@@ -63,7 +63,7 @@ interface Lineups {
   home: LineupData
 }
 
-const Match = ( props : Props ) => {
+const MatchMLB = ( props : Props ) => {
     const [form, setForm] = useState<Form>({
       awayTeam: {} as TeamForm,
       homeTeam: {} as TeamForm,
@@ -75,8 +75,8 @@ const Match = ( props : Props ) => {
       home: {} as LineupData
     })
     
-    const home = teams.find(team => team.name === props.match.homeTeam.name)
-    const away = teams.find(team => team.name === props.match.awayTeam.name)
+    const home = MLB_TEAMS.find(team => team.name === props.match.homeTeam.name)
+    const away = MLB_TEAMS.find(team => team.name === props.match.awayTeam.name)
     
     const handleInfo = (team: number) : void => {
       fetchFromAPI(`baseball/match/${props.match.id}/form`)
@@ -184,4 +184,4 @@ const Match = ( props : Props ) => {
   );
 };
 
-export default Match;
+export default MatchMLB;
